@@ -1,0 +1,7 @@
+numpy==1.23.5
+cachetools==4.2.2
+easyocr==1.7.0
+joblib==1.2.0
+pillow==9.4.0
+snowflake-snowpark-python
+torchvision==0.15.2
