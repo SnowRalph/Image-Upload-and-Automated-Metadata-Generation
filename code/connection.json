@@ -1,9 +1,9 @@
 {
-  "account"   : "",
-  "user"      : "",
-  "password"  : "",
-  "role"      : "",
-  "warehouse" : "",
-  "database"  : "",
-  "schema"    : ""
+  "account"   : "<YOUR_ACCOUNT>",
+  "user"      : "<YOUR_USER>",
+  "password"  : "<YOUR_PASSWORD>",
+  "role"      : "<YOUR_ROLE>",
+  "warehouse" : "<YOUR_WAREHOUSE>",
+  "database"  : "<YOUR_DATABASE>",
+  "schema"    : "<YOUR_SCHEMA>"
 }
