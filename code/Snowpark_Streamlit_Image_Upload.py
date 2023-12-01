@@ -67,7 +67,7 @@ session = create_session()
 uploaded_file = st.file_uploader("Choose an image file", accept_multiple_files=False, label_visibility='hidden')
 if uploaded_file is not None:
 
-    with st.spinner("Uploading image, generating metadata and inserting in real-time..."):
+    with st.spinner("Uploading image, generating metadata and inserting ..."):
         start_time = datetime.now()
         # Convert image base64 string into hex 
         bytes_data_in_hex = uploaded_file.getvalue().hex()
@@ -93,6 +93,8 @@ if uploaded_file is not None:
                                          M[3] AUTHOR, 
                                          M[4] PROJECT_YEAR 
                                   FROM METADATA;""").collect()
+        suspend()
+        downsize()
 
         # Get metadata information for the app 
         metadata = session.sql(f"""SELECT EXECUTIVE_ORDER, 
@@ -129,9 +131,6 @@ if uploaded_file is not None:
                 st.caption("Project Year")
                 st.markdown(metadata.iloc[0,3].replace('"',''))
 
-        suspend()
-        downsize()
-        
         end_time = datetime.now()
         diff = end_time - start_time
         with st.container():
